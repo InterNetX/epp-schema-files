@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:au-1.0"
+	xmlns:au="urn:org:domainrobot:ns:contact:au-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<element name="contact" type="au:contactType" />
+	<complexType name="contactType">
+		<sequence>
+			<element name="eligibilityId" type="string" minOccurs="0" />
+			<element name="eligibilityIdType" type="string" minOccurs="0" />
+			<element name="eligibilityName" type="string" minOccurs="0" />
+			<element name="eligibilityType" type="string" minOccurs="0" />
+			
+			<element name="policyReason" type="int" minOccurs="0" />
+			
+			<element name="registrantId" type="string" minOccurs="0" />
+			<element name="registrantIdType" type="string" minOccurs="0" />
+			<element name="registrantName" type="string" minOccurs="0" />
+			
+		</sequence>
+	</complexType>
+</schema>

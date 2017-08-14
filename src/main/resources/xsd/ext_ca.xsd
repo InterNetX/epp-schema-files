@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:ca-1.0"
+	xmlns:ca="urn:org:domainrobot:ns:contact:ca-1.0" 
+	xmlns:domainrobot="urn:org:domainrobot:ns:ext-1.0"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<import namespace="urn:org:domainrobot:ns:ext-1.0"
+		schemaLocation="ext_domainrobot.xsd" />
+	<element name="contact" type="ca:contactType" />
+
+	<complexType name="contactType">
+		<sequence>
+			<element name="cpr" type="string" minOccurs="0" />
+			<element name="agreementVersion" type="double" minOccurs="0" />
+			<element name="originatingIp" type="string" minOccurs="0" />
+			<element name="officialRepresentative" type="string"
+				minOccurs="0" />
+			<element name="trusteePercentage" type="domainrobot:percentageType" minOccurs="0" />
+		</sequence>
+	</complexType>
+	
+	
+</schema>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:uk-1.0"
+	xmlns:uk="urn:org:domainrobot:ns:contact:uk-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<element name="contact" type="uk:contactType" />
+
+	<complexType name="contactType">
+		<sequence>
+			<element name="type" type="string" minOccurs="1" />
+		</sequence>
+	</complexType>
+</schema>
+

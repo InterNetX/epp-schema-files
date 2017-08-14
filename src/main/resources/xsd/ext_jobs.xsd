@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:jobs-1.0"
+	xmlns:jobs="urn:org:domainrobot:ns:contact:jobs-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<element name="contact" type="jobs:contactType" />
+
+	<complexType name="contactType">
+		<sequence>
+			<element name="adminType" type="boolean" minOccurs="0" />
+			<element name="contactTitle" type="string" minOccurs="0" />
+			<element name="hrMember" type="boolean" minOccurs="0" />
+			<element name="industryClass" type="int" minOccurs="0" />
+			<element name="website" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+</schema>
+

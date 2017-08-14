@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:bank-1.0"
+	xmlns:bank="urn:org:domainrobot:ns:contact:bank-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:contact="urn:ietf:params:xml:ns:contact-1.0" elementFormDefault="qualified">
+	<import namespace="urn:ietf:params:xml:ns:contact-1.0"
+		schemaLocation="rfc5733_contact_mapping.xsd" />
+	<element name="contact" type="bank:contactType" />
+	<complexType name="contactType">
+		<sequence>
+			<element name="regulatoryIdNumber" type="string" minOccurs="0" />
+			<element name="governmentRegulatoryAuthorityName" type="string"
+				minOccurs="0" />
+			<element name="humanResourceName" type="string" minOccurs="0" />
+			<element name="humanResourcePhone" type="contact:e164Type" minOccurs="0" />
+			<element name="humanResourceMail" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+</schema>
+

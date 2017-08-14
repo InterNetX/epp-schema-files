@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:ru-1.0"
+	xmlns:ru="urn:org:domainrobot:ns:contact:ru-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<element name="contact" type="ru:contactType" />
+
+	<complexType name="contactType">
+		<sequence>
+			<element name="taxpayerIdentificationNumber" type="string"
+				minOccurs="0" />
+			<element name="territoryLinkedTaxpayerNumber" type="string"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+</schema>
+

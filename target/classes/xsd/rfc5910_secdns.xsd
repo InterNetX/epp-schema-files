@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="urn:ietf:params:xml:ns:secDNS-1.1"
+	xmlns:secDNS="urn:ietf:params:xml:ns:secDNS-1.1" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<annotation>
+		<documentation>
+			Extensible Provisioning Protocol v1.0
+			domain name
+			extension schema
+			for provisioning DNS security (DNSSEC) extensions.
+		</documentation>
+		<appinfo>
+			<copyright-notice>
+				Copyright (c) 2010 IETF Trust and the persons
+				identified as authors
+				of the code. All rights reserved.
+
+				Redistribution and use in source and binary forms, with or without
+				modification, are permitted provided that the following conditions
+				are met:
+
+				- Redistributions of source code must retain the above
+				copyright
+				notice, this list of conditions and the following
+				disclaimer.
+
+				- Redistributions in binary form must reproduce the above
+				copyright
+				notice, this list of conditions and the following
+				disclaimer in
+				the documentation and/or other materials provided with
+				the
+				distribution.
+
+				- Neither the name of Internet Society, IETF or IETF
+				Trust, nor the
+				names of specific contributors, may be used to endorse
+				or promote
+				products derived from this software without specific prior
+				written
+				permission.
+			</copyright-notice>
+			<disclaimer>
+				THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+				CONTRIBUTORS
+				"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+				LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+				FOR
+				A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+				OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+				INCIDENTAL,
+				SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+				LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+				DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+				THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+				(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+				USE
+				OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+			</disclaimer>
+			<author>
+				James Gould
+	   			VeriSign, Inc.
+	   			21345 Ridgetop Circle
+	   			Dulles, VA  20166-6503
+	  		 	US
+			</author>
+			<author>
+			    Scott Hollenbeck
+			    VeriSign, Inc.
+			    21345 Ridgetop Circle
+			    Dulles, VA  20166-6503
+			    US
+			</author>
+		</appinfo>
+	</annotation>
+
+	<!-- Child elements found in EPP commands. -->
+	<element name="create" type="secDNS:dsOrKeyType" />
+	<element name="update" type="secDNS:updateType" />
+
+	<!-- Child elements supporting either the dsData or the keyData interface. -->
+	<complexType name="dsOrKeyType">
+		<sequence>
+			<element name="maxSigLife" type="secDNS:maxSigLifeType"
+				minOccurs="0" />
+			<choice>
+				<element name="dsData" type="secDNS:dsDataType" maxOccurs="unbounded" />
+				<element name="keyData" type="secDNS:keyDataType" maxOccurs="unbounded" />
+			</choice>
+		</sequence>
+	</complexType>
+
+	<!-- Definition for the maximum signature lifetime (maxSigLife) -->
+	<simpleType name="maxSigLifeType">
+		<restriction base="int">
+			<minInclusive value="1" />
+		</restriction>
+	</simpleType>
+
+	<!-- Child elements of dsData used for dsData interface -->
+	<complexType name="dsDataType">
+		<sequence>
+			<element name="keyTag" type="unsignedShort" />
+			<element name="alg" type="unsignedByte" />
+			<element name="digestType" type="unsignedByte" />
+			<element name="digest" type="hexBinary" />
+			<element name="keyData" type="secDNS:keyDataType" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<!-- Child elements of keyData used for keyData interface and optionally 
+		with dsData interface -->
+	<complexType name="keyDataType">
+		<sequence>
+			<element name="flags" type="unsignedShort" />
+			<element name="protocol" type="unsignedByte" />
+			<element name="alg" type="unsignedByte" />
+			<element name="pubKey" type="secDNS:keyType" />
+		</sequence>
+	</complexType>
+
+	<!-- Definition for the public key -->
+	<simpleType name="keyType">
+		<restriction base="base64Binary">
+			<minLength value="1" />
+		</restriction>
+	</simpleType>
+
+	<!-- Child elements of the <update> element. -->
+	<complexType name="updateType">
+		<sequence>
+			<element name="rem" type="secDNS:remType" minOccurs="0" />
+			<element name="add" type="secDNS:dsOrKeyType" minOccurs="0" />
+			<element name="chg" type="secDNS:chgType" minOccurs="0" />
+		</sequence>
+		<attribute name="urgent" type="boolean" default="false" />
+	</complexType>
+
+	<!-- Child elements of the <rem> command. -->
+	<complexType name="remType">
+		<choice>
+			<element name="all" type="boolean" />
+			<element name="dsData" type="secDNS:dsDataType" maxOccurs="unbounded" />
+			<element name="keyData" type="secDNS:keyDataType" maxOccurs="unbounded" />
+		</choice>
+	</complexType>
+
+	<!-- Child elements supporting the <chg> element. -->
+	<complexType name="chgType">
+		<sequence>
+			<element name="maxSigLife" type="secDNS:maxSigLifeType"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<!-- Child response elements. -->
+	<element name="infData" type="secDNS:dsOrKeyType" />
+
+</schema>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="urn:ietf:params:xml:ns:eppcom-1.0"
+           xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+           xmlns="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+	<annotation>
+		<documentation>Extensible Provisioning Protocol v1.0 shared structures schema.</documentation>
+		<appinfo>
+			<copyright-notice>
+				https://www.ietf.org/rfc/rfc5730.txt
+				Copyright (c) 2009 IETF Trust and the persons identified as authors
+				of the code. All rights reserved.
+
+				Redistribution and use in source and binary forms, with or without
+				modification, are permitted provided that the following conditions
+				are met:
+
+				o Redistributions of source code must retain the above copyright
+				notice, this list of conditions and the following disclaimer.
+
+				o Redistributions in binary form must reproduce the above copyright
+				notice, this list of conditions and the following disclaimer in
+				the documentation and/or other materials provided with the
+				distribution.
+
+				o Neither the name of Internet Society, IETF or IETF Trust, nor the
+				names of specific contributors, may be used to endorse or promote
+				products derived from this software without specific prior written
+				permission.
+			</copyright-notice>
+			<disclaimer>
+				THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+				"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+				LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+				FOR
+				A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+				OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+				INCIDENTAL,
+				SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+				LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+				DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+				THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+				(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+				USE
+				OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+			</disclaimer>
+			<author>
+			    Scott Hollenbeck
+			    VeriSign, Inc.
+			    21345 Ridgetop Circle
+			    Dulles, VA  20166-6503
+			    US
+			</author>
+		</appinfo>
+	</annotation>
+	<!--Object authorization information types.-->
+	<complexType name="pwAuthInfoType">
+		<simpleContent>
+			<extension base="normalizedString">
+				<attribute name="roid" type="eppcom:roidType"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="extAuthInfoType">
+		<sequence>
+			<any namespace="##other"/>
+		</sequence>
+	</complexType>
+	<!--<check> response types.-->
+	<complexType name="reasonType">
+		<simpleContent>
+			<extension base="eppcom:reasonBaseType">
+				<attribute name="lang" type="language"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<simpleType name="reasonBaseType">
+		<restriction base="token">
+			<minLength value="1"/>
+			<maxLength value="32"/>
+		</restriction>
+	</simpleType>
+	<!--Abstract client and object identifier type.-->
+	<simpleType name="clIDType">
+		<restriction base="token">
+			<minLength value="3"/>
+			<maxLength value="16"/>
+		</restriction>
+	</simpleType>
+	<!--DNS label type.-->
+	<simpleType name="labelType">
+		<restriction base="token">
+			<minLength value="1"/>
+			<maxLength value="255"/>
+		</restriction>
+	</simpleType>
+	<!--Non-empty token type.-->
+	<simpleType name="minTokenType">
+		<restriction base="token">
+			<minLength value="1"/>
+		</restriction>
+	</simpleType>
+	<!--Repository Object IDentifier type.-->
+	<simpleType name="roidType">
+		<restriction base="token">
+			<pattern value="(\w|_){1,80}-\w{1,8}"/>
+		</restriction>
+	</simpleType>
+	<!--Transfer status identifiers.-->
+	<simpleType name="trStatusType">
+		<restriction base="token">
+			<enumeration value="clientApproved"/>
+			<enumeration value="clientCancelled"/>
+			<enumeration value="clientRejected"/>
+			<enumeration value="pending"/>
+			<enumeration value="serverApproved"/>
+			<enumeration value="serverCancelled"/>
+		</restriction>
+	</simpleType>
+	<!--End of schema.-->
+</schema>

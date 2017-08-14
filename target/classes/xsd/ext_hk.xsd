@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:hk-1.0"
+	xmlns:hk="urn:org:domainrobot:ns:contact:hk-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<element name="contact" type="hk:contactType" />
+<!--  -->
+  <complexType name="contactType">
+    <sequence>
+      <element name="documentType" type="string" minOccurs="0"/>
+      <element name="others" type="string" minOccurs="0"/>
+      <element name="documentNumber" type="string" minOccurs="0"/>
+      <element name="documentOrigin" type="string" minOccurs="0"/>
+      <element name="above18" type="boolean" minOccurs="0"/>
+      <element name="industryType" type="string" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  
+</schema>
+

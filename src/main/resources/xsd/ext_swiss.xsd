@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:swiss-1.0"
+	xmlns:swiss="urn:org:domainrobot:ns:contact:swiss-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<element name="contact" type="swiss:contactType" />
+
+	<complexType name="contactType">
+		<sequence>
+			<element name="enterpriseId" type="string" minOccurs="0" />
+			<element name="intendedUse" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+</schema>
+

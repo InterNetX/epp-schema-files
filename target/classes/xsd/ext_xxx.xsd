@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:xxx-1.0"
+	xmlns:xxx="urn:org:domainrobot:ns:contact:xxx-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<element name="contact" type="xxx:contactType" />
+
+	<complexType name="contactType">
+		<sequence>
+			<element name="membershipId" type="string" minOccurs="0" />
+			<element name="nonResolverDomain" type="boolean" minOccurs="0" />
+		</sequence>
+	</complexType>
+</schema>
+
