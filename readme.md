@@ -61,6 +61,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ### 1.0.3
 * Initial Release
+### 1.0.4
+* Add .gitignore and remove files
+### 1.0.5
+* Rename LICENCE to LICENCE.md
 
 ## Authors
 
