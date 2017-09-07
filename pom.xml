@@ -153,21 +153,6 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
-				<plugin>
-					<groupId>com.e-gineering</groupId>
-					<artifactId>gitflow-helper-maven-plugin</artifactId>
-					<version>1.2.5</version>
-					<configuration>
-						<releaseDeploymentRepository>internetx.releases::default::https://repo.autodns.com/nexus/content/repositories/internetx.releases::false</releaseDeploymentRepository>
-						<stageDeploymentRepository>internetx.releases::default::https://repo.autodns.com/nexus/content/repositories/internetx.releases::false</stageDeploymentRepository>
-						<snapshotDeploymentRepository>internetx.snapshots::default::https://repo.autodns.com/nexus/content/repositories/internetx.snapshots::false</snapshotDeploymentRepository>
-						<tag>${project.artifactId}-${project.version}</tag>
-						<developmentBranchPattern>develop</developmentBranchPattern>
-						<releaseBranchPattern>release/(.*)</releaseBranchPattern>
-						<masterBranchPattern>master</masterBranchPattern>
-						<hotfixBranchPattern>hotfix/(.*)</hotfixBranchPattern>
-					</configuration>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
