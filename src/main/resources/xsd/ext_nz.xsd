@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:nz-1.0"
+	xmlns:nz="urn:org:domainrobot:ns:contact:nz-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<element name="contact" type="nz:contactType" />
+
+	<complexType name="contactType">
+		<sequence>
+			<element name="irpo" type="boolean" minOccurs="0" />
+		</sequence>
+	</complexType>
+</schema>
