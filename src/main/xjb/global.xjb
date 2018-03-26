@@ -133,5 +133,9 @@
 			<namespace:prefix name="xxx" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-
+	<jaxb:bindings schemaLocation="../resources/xsd/ext_nz.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="nz" />
+		</jaxb:bindings>
+	</jaxb:bindings>
 </jaxb:bindings>
