@@ -7,12 +7,7 @@
 	<element name="contact" type="bank:contactType" />
 	<complexType name="contactType">
 		<sequence>
-			<element name="regulatoryIdNumber" type="string" minOccurs="0" />
-			<element name="governmentRegulatoryAuthorityName" type="string"
-				minOccurs="0" />
-			<element name="humanResourceName" type="string" minOccurs="0" />
-			<element name="humanResourcePhone" type="contact:e164Type" minOccurs="0" />
-			<element name="humanResourceMail" type="string" minOccurs="0" />
+			<element name="ftldToken" type="string" minOccurs="0" />
 		</sequence>
 	</complexType>
 </schema>
