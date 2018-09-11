@@ -64,8 +64,10 @@
 			<element name="deletion" type="dateTime" minOccurs="0" />
 			<element name="trustee" type="boolean" minOccurs="0"></element>
 			<element name="privacy" type="boolean" minOccurs="0"></element>
+			<element name="privacyPlus" type="boolean" minOccurs="0"></element>
 			<element name="domainsafe" type="boolean" minOccurs="0"></element>
 			<element name="autoDnssec" type="boolean" minOccurs="0"></element>
+			<element name="RDDSOptIn" type="domainrobot:RDDSOptInType" minOccurs="0" />
 		</sequence>
 	</complexType>
 
@@ -177,6 +179,14 @@
 				<attribute name="type" type="string" />
 			</extension>
 		</simpleContent>
+	</complexType>
+	
+	<complexType name="RDDSOptInType">
+		<sequence>
+			<element name="registrant" minOccurs="0" maxOccurs="1" />
+			<element name="admin" minOccurs="0" maxOccurs="1" />
+			<element name="tech" minOccurs="0" maxOccurs="1" />
+		</sequence>
 	</complexType>
 	
 	<simpleType name="percentageType">
