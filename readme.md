@@ -65,7 +65,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * Add .gitignore and remove files
 ### 1.0.5
 * Rename LICENCE to LICENCE.md
-### 1.0.d
+### 1.0.6
 * new extension .sport
 * new extension for qualifiedLawyer
 
