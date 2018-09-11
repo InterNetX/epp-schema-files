@@ -138,4 +138,9 @@
 			<namespace:prefix name="nz" />
 		</jaxb:bindings>
 	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="../resources/xsd/ext_sport.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="sport" />
+		</jaxb:bindings>
+	</jaxb:bindings>
 </jaxb:bindings>
