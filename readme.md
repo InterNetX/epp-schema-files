@@ -69,6 +69,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * new extension .sport
 * new extension for qualifiedLawyer
 
+### 1.0.7
+* new extension .luxe
+* added fee extension
+
 ## Authors
 
 * **Thomas Proll** - *Initial work*
