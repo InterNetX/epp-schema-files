@@ -2,7 +2,8 @@
 <jaxb:bindings version="2.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:namespace="http://jaxb2-commons.dev.java.net/namespace-prefix"
-	jaxb:extensionBindingPrefixes="xjc">
+	jaxb:extensionBindingPrefixes="xjc"
+	xmlns:fee="urn:ietf:params:xml:ns:epp:fee-1.0">
 	<jaxb:globalBindings>
 		<xjc:simple />
 		<xjc:serializable uid="-1" />
@@ -14,6 +15,8 @@
 			adapter="org.domainrobot.adapter.LocaleLanguageAdapter" />
 		<xjc:javaType name="java.lang.Boolean" xmlType="xs:boolean"
 			adapter="org.domainrobot.adapter.BooleanAdapter" />
+		<xjc:javaType name="java.util.Currency" xmlType="fee:currencyType"
+			adapter="org.domainrobot.adapter.CurrencyAdapter" />
 	</jaxb:globalBindings>
 	<jaxb:bindings schemaLocation="../resources/xsd/rfc5733_contact_mapping.xsd">
 
@@ -44,10 +47,15 @@
 			<namespace:prefix name="rgp" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	
+
 	<jaxb:bindings schemaLocation="../resources/xsd/rfc5910_secdns.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="secDNS" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="../resources/xsd/draft-ietf-regext-epp-fees-13.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="fee" />
 		</jaxb:bindings>
 	</jaxb:bindings>
 
@@ -148,4 +156,10 @@
 			<namespace:prefix name="sport" />
 		</jaxb:bindings>
 	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="../resources/xsd/ext_luxe.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="luxe" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+
 </jaxb:bindings>
