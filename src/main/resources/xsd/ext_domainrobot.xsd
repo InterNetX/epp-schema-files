@@ -101,12 +101,13 @@
 			<element name="birth" type="domainrobot:birthType" minOccurs="0" />
 			<element name="vatnumber" type="string" minOccurs="0" />
 			<element name="disableDuplicateSearch" minOccurs="0" type="boolean" />
+			<element name="citizenship" type="contact:ccType" minOccurs="0" />
 		</sequence>
 	</complexType>
 
 	<complexType name="birthType">
 		<sequence>
-			<element name="country" type="string" minOccurs="0" />
+			<element name="country" type="contact:ccType" minOccurs="0" />
 			<element name="day" type="date" minOccurs="0" />
 			<element name="pcode" type="string" minOccurs="0" />
 			<element name="place" type="string" minOccurs="0" />
@@ -118,7 +119,7 @@
 			<element name="name" type="string" minOccurs="0" />
 			<element name="office" type="string" minOccurs="0" />
 			<element name="number" type="string" minOccurs="0" />
-			<element name="country" type="string" minOccurs="0" />
+			<element name="country" type="contact:ccType" minOccurs="0" />
 			<element name="regdate" type="date" minOccurs="0" />
 			<element name="appdate" type="date" minOccurs="0" />
 		</sequence>
