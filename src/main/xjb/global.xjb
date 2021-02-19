@@ -161,5 +161,11 @@
 			<namespace:prefix name="luxe" />
 		</jaxb:bindings>
 	</jaxb:bindings>
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_scot.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="scot" />
+		</jaxb:bindings>
+	</jaxb:bindings>
 
 </jaxb:bindings>
