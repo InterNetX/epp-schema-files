@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+
 /**
  * 
  * @author thomasproll
@@ -19,6 +20,8 @@ public class RFCDateAdapter extends XmlAdapter<String, Date> {
 
 	@Override
 	public Date unmarshal(String v) throws Exception {
+		if(v == null || v.length() == 0)
+			return null;
 		synchronized(lock) {
 			return df.parse(v);
 		}
@@ -26,6 +29,8 @@ public class RFCDateAdapter extends XmlAdapter<String, Date> {
 
 	@Override
 	public String marshal(Date v) throws Exception {
+		if(v == null)
+			return null;
 		synchronized(lock) {
 			return df.format(v);
 		}
