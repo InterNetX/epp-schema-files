@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:document-1.0"
+	xmlns:document="urn:org:domainrobot:ns:contact:document-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<element name="document" type="document:documentType" />
+
+	<complexType name="documentType">
+		<sequence>
+		<!-- 
+			<element name="mimeType" type="string" minOccurs="1" />
+			<element name="size" type="long" minOccurs="1" />
+			<element name="name" type="string" minOccurs="1" />
+			 -->
+			<element name="auditType" type="document:auditType" minOccurs="1" />
+			<element name="expire" type="dateTime" minOccurs="1" />
+			<element name="verification" type="document:verificationType" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="verificationType">
+		<restriction base="string">
+			<enumeration value="FAILED" />
+			<enumeration value="NOT_SET" />
+			<enumeration value="PENDING" />
+			<enumeration value="SUCCESS" />
+		</restriction>
+	</simpleType>
+		
+	<simpleType name="auditType">
+		<restriction base="string">
+			<!-- persons -->
+			<enumeration value="ID_CARD" />
+			<enumeration value="PASSPORT" />
+			<enumeration value="CN_MAINLAND_TRAVEL_PERMIT_HK_MO" />
+			<enumeration value="CN_MAINLAND_TRAVEL_PERMIT_TW" />
+			<enumeration value="PERMANENT_RESIDENCE_PERMIT_FOREIGNERS" />
+			<enumeration value="CN_RESIDENCE_PERMIT_HK_MO" />
+			<enumeration value="CN_RESIDENCE_PERMIT_TW" />
+			<enumeration value="MILITARY_ID_CARD" />
+			<enumeration value="OTHER_ID_CARD" />
+			<!-- organisations -->
+			<enumeration value="CN_ORG_ID" />
+			<enumeration value="CN_BUSINESS_ID" />
+			<enumeration value="CN_SOCIAL_CREDIT_LICENCE" />
+			<enumeration value="MILITARY_UNIT_CODE" />
+			<enumeration value="MILITARY_UNIT_EXTERNAL_PERMIT" />
+			<enumeration value="INSTITUION_LEGAL_PERSON" />
+			<enumeration value="CN_FOREIGN_ENTERPRISE_REGISTRATION" />
+			<enumeration value="SOCIAL_ORG_LEGAL_PERSON" />
+			<enumeration value="RELIGIOS_ACTIVITY" />
+			<enumeration value="PRIVATE_NON_ENTERPRISE_REGISTRATION" />
+			<enumeration value="FOUNDATION_LEGAL_PERSON" />
+			<enumeration value="LAW_FIRM_LICENCE" />
+			<enumeration value="CN_FOREIGN_CULTURAL_CENTER" />
+			<enumeration value="CN_FOREIGN_TOURISM_DEPARTMENT_REGISTRATION" />
+			<enumeration value="FORENSIC_EXPERTISE_LICENCE" />
+			<enumeration value="SOCIAL_AGENCY_CERTIFICATE" />
+			<enumeration value="PRIVATE_SCHOOL_PERMIT" />
+			<enumeration value="MEDICAL_INSTITUION_LICENCE" />
+			<enumeration value="NOTARY_ORG_LICENCE" />
+			<enumeration value="CN_FOREIGN_EMBASSY_CHILDREN_PERMIT_BEIJING" />
+			<enumeration value="OTHER_ORG_DOC" />
+			<enumeration value="ORG_CERTIFICATE" />
+		</restriction>
+	</simpleType>
+</schema>
+

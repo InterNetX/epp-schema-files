@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:zuerich-1.0"
+	xmlns:zuerich="urn:org:domainrobot:ns:contact:zuerich-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<element name="contact" type="zuerich:contactType" />
+
+
+	<complexType name="contactType">
+		<sequence>
+			<element name="enterpriseId" type="string" minOccurs="0" />
+			<element name="isAuthority" type="boolean" minOccurs="0" />
+		</sequence>
+	</complexType>
+</schema>
+
