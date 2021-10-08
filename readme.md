@@ -73,6 +73,22 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * new extension .luxe
 * added fee extension
 
+### 1.0.8
+* new extension .ie
+
+### 1.0.10
+* added fee extension
+* added DoubleAdapter
+
+### 1.0.15
+* new extension .madrid
+
+### 1.0.20
+* new extension .zuerich
+
+### 1.0.25
+* new contact extension for documents
+
 ## Authors
 
 * **Thomas Proll** - *Initial work*
