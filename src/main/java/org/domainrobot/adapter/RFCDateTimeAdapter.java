@@ -26,6 +26,8 @@ public class RFCDateTimeAdapter extends XmlAdapter<String, Date> {
 
 	@Override
 	public Date unmarshal(String v) throws Exception {
+		if(v == null || v.length() == 0)
+			return null;
 		synchronized(lock) {
 			return df.parse(v);
 		}
@@ -33,6 +35,8 @@ public class RFCDateTimeAdapter extends XmlAdapter<String, Date> {
 
 	@Override
 	public String marshal(Date v) throws Exception {
+		if(v == null)
+			return null;
 		synchronized(lock) {
 			return df.format(v);
 		}
