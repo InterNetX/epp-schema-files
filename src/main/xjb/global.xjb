@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jaxb:bindings version="2.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
-	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<jaxb:bindings version="2.0"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:namespace="http://jaxb2-commons.dev.java.net/namespace-prefix"
 	jaxb:extensionBindingPrefixes="xjc"
 	xmlns:fee="urn:ietf:params:xml:ns:epp:fee-1.0">
@@ -11,56 +13,68 @@
 			adapter="org.domainrobot.adapter.RFCDateTimeAdapter" />
 		<xjc:javaType name="java.util.Date" xmlType="xs:date"
 			adapter="org.domainrobot.adapter.RFCDateAdapter" />
-		<xjc:javaType name="java.util.Locale" xmlType="xs:language"
+		<xjc:javaType name="java.util.Locale"
+			xmlType="xs:language"
 			adapter="org.domainrobot.adapter.LocaleLanguageAdapter" />
-		<xjc:javaType name="java.lang.Boolean" xmlType="xs:boolean"
-			adapter="org.domainrobot.adapter.BooleanAdapter" />
-		<xjc:javaType name="java.util.Currency" xmlType="fee:currencyType"
+		<xjc:javaType name="java.lang.Boolean"
+			xmlType="xs:boolean" adapter="org.domainrobot.adapter.BooleanAdapter" />
+		<xjc:javaType name="java.util.Currency"
+			xmlType="fee:currencyType"
 			adapter="org.domainrobot.adapter.CurrencyAdapter" />
+		<xjc:javaType name="java.lang.Double"
+			xmlType="xs:decimal" adapter="org.domainrobot.adapter.DoubleAdapter" />
 	</jaxb:globalBindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/rfc5733_contact_mapping.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/rfc5733_contact_mapping.xsd">
 
 		<jaxb:bindings>
 			<namespace:prefix name="contact" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/rfc5732_host_mapping.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/rfc5732_host_mapping.xsd">
 
 		<jaxb:bindings>
 			<namespace:prefix name="host" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/rfc5730_base.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/rfc5730_base.xsd">
 
 		<jaxb:bindings>
 			<namespace:prefix name="" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/rfc5731_domain_name_mapping.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/rfc5731_domain_name_mapping.xsd">
 
 		<jaxb:bindings>
 			<namespace:prefix name="domain" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/rfc3915_ext_rgp.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/rfc3915_ext_rgp.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="rgp" />
 		</jaxb:bindings>
 	</jaxb:bindings>
 
-	<jaxb:bindings schemaLocation="../resources/xsd/rfc5910_secdns.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/rfc5910_secdns.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="secDNS" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/draft-ietf-regext-epp-fees-13.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/rfc8748_fee_extention.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="fee" />
 		</jaxb:bindings>
 	</jaxb:bindings>
 
 	<!-- domain robot extensions -->
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_domainrobot.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_domainrobot.xsd">
 
 		<jaxb:bindings>
 			<namespace:prefix name="domainrobot" />
@@ -68,97 +82,121 @@
 	</jaxb:bindings>
 
 
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_aero.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_aero.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="aero" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_au.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_au.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="au" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_bank.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_bank.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="bank" />
 		</jaxb:bindings>
 	</jaxb:bindings>
 
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_barcelona.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_barcelona.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="barcelona" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_ca.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_ca.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="ca" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_cat.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_cat.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="cat" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_hk.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_hk.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="hk" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_it.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_it.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="it" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_jobs.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_jobs.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="jobs" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_ro.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_ro.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="ro" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_ru.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_ru.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="ru" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_swiss.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_swiss.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="swiss" />
 		</jaxb:bindings>
 	</jaxb:bindings>
 
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_uk.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_uk.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="uk" />
 		</jaxb:bindings>
 	</jaxb:bindings>
 
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_xxx.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_xxx.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="xxx" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_nz.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_nz.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="nz" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_qualified_lawyer.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_qualified_lawyer.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="qualifiedLawyer" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_sport.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_sport.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="sport" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	<jaxb:bindings schemaLocation="../resources/xsd/ext_luxe.xsd">
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_luxe.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="luxe" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_madrid.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="madrid" />
 		</jaxb:bindings>
 	</jaxb:bindings>
 	<jaxb:bindings
@@ -167,5 +205,23 @@
 			<namespace:prefix name="scot" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-
+	<jaxb:bindings
+	   schemaLocation="../resources/xsd/ext_ie.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="ie" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_zuerich.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="zuerich" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_document.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="document" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+	
 </jaxb:bindings>
