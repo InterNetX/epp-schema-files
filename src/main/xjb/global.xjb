@@ -223,5 +223,10 @@
 			<namespace:prefix name="document" />
 		</jaxb:bindings>
 	</jaxb:bindings>
-	
+	<jaxb:bindings
+		schemaLocation="../resources/xsd/ext_registrar.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="registrar" />
+		</jaxb:bindings>
+	</jaxb:bindings>
 </jaxb:bindings>
