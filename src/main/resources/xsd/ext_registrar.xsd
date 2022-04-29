@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:registrar-1.0"
+	xmlns:registrar="urn:org:domainrobot:ns:registrar-1.0"
+	xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<element name="registrar" type="registrar:registrarType" />
+	<complexType name="registrarType">
+		<sequence>
+			<element name="import" type="registrar:importType"
+				minOccurs="0" />
+			<element name="drop" type="registrar:dropType"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+	<complexType name="importType">
+		<sequence>
+			<element name="type" type="registrar:actionType"
+				minOccurs="0" />
+			<element name="exDate" type="dateTime" minOccurs="0" />
+			<element name="crDate" type="dateTime" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<simpleType name="actionType">
+		<restriction base="string">
+			<enumeration value="IMPORT" />
+			<enumeration value="CREATE" />
+			<enumeration value="TRANSFER" />
+			<enumeration value="RESTORE" />
+			<enumeration value="RESTORE_ARGP" />
+			<enumeration value="RESTORE_NE" />
+		</restriction>
+	</simpleType>
+	<simpleType name="dropType">
+		<restriction base="string">
+			<enumeration value="DROP" />
+			<enumeration value="DOMAIN_AWAY" />
+			<enumeration value="DELETE" />
+		</restriction>
+	</simpleType>
+</schema>
