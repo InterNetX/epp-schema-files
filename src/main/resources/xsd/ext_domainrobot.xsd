@@ -102,6 +102,7 @@
 			<element name="vatnumber" type="string" minOccurs="0" />
 			<element name="disableDuplicateSearch" minOccurs="0" type="boolean" />
 			<element name="citizenship" type="contact:ccType" minOccurs="0" />
+			<element name="strict" minOccurs="0" type="boolean" />
 		</sequence>
 	</complexType>
 
