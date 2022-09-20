@@ -92,6 +92,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ### 1.0.26
 * new registrar extension
 
+### 1.0.27
+* new contact extension: strict
+
 ## Authors
 
 * **Thomas Proll** - *Initial work*
