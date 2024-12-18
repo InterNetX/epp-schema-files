@@ -3,9 +3,12 @@
 	xmlns:domainrobot="urn:org:domainrobot:ns:ext-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:contact="urn:ietf:params:xml:ns:contact-1.0" xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
 	xmlns:host="urn:ietf:params:xml:ns:host-1.0" xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+	xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
 	elementFormDefault="qualified">
 	<import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
 		schemaLocation="rfc5730_shared_structure.xsd" />
+	<import namespace="urn:ietf:params:xml:ns:epp-1.0"
+		schemaLocation="rfc5730_base.xsd" />
 	<import namespace="urn:ietf:params:xml:ns:contact-1.0"
 		schemaLocation="rfc5733_contact_mapping.xsd" />
 	<import namespace="urn:ietf:params:xml:ns:domain-1.0"
@@ -21,6 +24,8 @@
 	<element name="authinfo1" type="domainrobot:authinfo1Type"></element>
 	<element name="authinfo2" type="domainrobot:authinfo2Type"></element>
 
+	<element name="job" type="domainrobot:jobType"></element>
+
 	<element name="messages">
 		<complexType>
 			<sequence>
@@ -34,11 +39,23 @@
 		<sequence>
 			<element name="name" type="eppcom:labelType" />
 			<element name="authInfo" type="domain:authInfoType" minOccurs="0"/>
+			<element name="authInfoExpire" type="dateTime" minOccurs="0" />
 		</sequence>
 	</complexType>
 	<complexType name="authinfo2Type">
 		<sequence>
 			<element name="name" type="eppcom:labelType" />
+		</sequence>
+	</complexType>
+
+	<complexType name="jobType">
+		<sequence>
+			<element name="clTRID" type="epp:trIDStringType" minOccurs="0" />
+			<element name="svTRID" type="epp:trIDStringType"/>
+			<element name="jobID" type="string" minOccurs="0" />
+			<element name="jobType" type="string" minOccurs="0" />
+			<element name="jobAction" type="string" minOccurs="0" />
+			<element name="jobObject" type="string" minOccurs="0" />
 		</sequence>
 	</complexType>
 
@@ -68,6 +85,10 @@
 			<element name="domainsafe" type="boolean" minOccurs="0"></element>
 			<element name="autoDnssec" type="boolean" minOccurs="0"></element>
 			<element name="RDDSOptIn" type="domainrobot:RDDSOptInType" minOccurs="0" />
+			<element name="nsEntry" type="string" minOccurs="0" maxOccurs="unbounded" />
+			<element name="add" type="domainrobot:domainrobotAddRemType" minOccurs="0" maxOccurs="1" />
+			<element name="rem" type="domainrobot:domainrobotAddRemType" minOccurs="0" maxOccurs="1" />
+			<element name="authInfoExpire" type="dateTime" minOccurs="0" />
 		</sequence>
 	</complexType>
 
@@ -77,7 +98,7 @@
 			<element name="registrant" type="eppcom:clIDType" minOccurs="0" />
 			<element name="contact" type="domain:contactType" minOccurs="0"
 				maxOccurs="unbounded" />
-
+			<element name="nsEntry" type="string" minOccurs="0" maxOccurs="unbounded" />
 		</sequence>
 	</complexType>
 
@@ -197,5 +218,11 @@
 			<maxInclusive value="100.0" />
 		</restriction>
 	</simpleType>
-</schema>
 
+	<complexType name="domainrobotAddRemType">
+		<sequence>
+			<element name="nsEntry" type="string" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+</schema>

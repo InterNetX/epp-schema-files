@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="urn:org:domainrobot:ns:contact:es-1.0"
+        xmlns:es="urn:org:domainrobot:ns:contact:es-1.0" xmlns="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified">
+
+    <element name="contact" type="es:contactType" />
+
+
+    <complexType name="contactType">
+        <sequence>
+            <element name="es_identificacion" type="string" minOccurs="0" />
+        </sequence>
+    </complexType>
+</schema>
+

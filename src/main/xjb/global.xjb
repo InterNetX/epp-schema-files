@@ -60,6 +60,13 @@
 	</jaxb:bindings>
 
 	<jaxb:bindings
+		schemaLocation="../resources/xsd/rfc8590_changePoll_extension.xsd">
+		<jaxb:bindings>
+			<namespace:prefix name="changePoll" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings
 		schemaLocation="../resources/xsd/rfc5910_secdns.xsd">
 		<jaxb:bindings>
 			<namespace:prefix name="secDNS" />
@@ -230,9 +237,9 @@
 		</jaxb:bindings>
 	</jaxb:bindings>
 	<jaxb:bindings
-		schemaLocation="../resources/xsd/ext_registrar.xsd">
+		schemaLocation="../resources/xsd/ext_es.xsd">
 		<jaxb:bindings>
-			<namespace:prefix name="registrar" />
+			<namespace:prefix name="es" />
 		</jaxb:bindings>
 	</jaxb:bindings>
 </jaxb:bindings>
