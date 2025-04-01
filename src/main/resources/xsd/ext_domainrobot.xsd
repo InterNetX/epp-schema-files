@@ -89,6 +89,7 @@
 			<element name="add" type="domainrobot:domainrobotAddRemType" minOccurs="0" maxOccurs="1" />
 			<element name="rem" type="domainrobot:domainrobotAddRemType" minOccurs="0" maxOccurs="1" />
 			<element name="authInfoExpire" type="dateTime" minOccurs="0" />
+			<element name="disconnect" type="boolean" minOccurs="0"></element>
 		</sequence>
 	</complexType>
 
