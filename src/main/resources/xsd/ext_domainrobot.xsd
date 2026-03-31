@@ -125,6 +125,7 @@
 			<element name="disableDuplicateSearch" minOccurs="0" type="boolean" />
 			<element name="citizenship" type="contact:ccType" minOccurs="0" />
 			<element name="strict" minOccurs="0" type="boolean" />
+			<element name="ownedBy" type="string" minOccurs="0" />
 		</sequence>
 	</complexType>
 

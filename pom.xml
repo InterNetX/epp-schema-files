@@ -3,7 +3,7 @@
 
 	<groupId>org.domainrobot.epp</groupId>
 	<artifactId>epp-files</artifactId>
-	<version>1.15.0</version>
+	<version>1.16.0</version>
 	<packaging>jar</packaging>
 
 	<name>EPP Schema Files</name>
