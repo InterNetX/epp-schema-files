@@ -26,6 +26,8 @@
 
 	<element name="job" type="domainrobot:jobType"></element>
 
+	<element name="verification" type="domainrobot:verificationType"></element>
+
 	<element name="messages">
 		<complexType>
 			<sequence>
@@ -34,6 +36,14 @@
 			</sequence>
 		</complexType>
 	</element>
+
+	<complexType name="verificationType">
+		<sequence>
+			<element name="name" type="eppcom:labelType" />
+			<element name="deletionDate" type="dateTime" minOccurs="0" />
+			<element name="deactivationDate" type="dateTime" minOccurs="0" />
+		</sequence>
+	</complexType>
 
 	<complexType name="authinfo1Type">
 		<sequence>
