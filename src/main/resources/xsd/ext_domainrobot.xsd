@@ -42,7 +42,9 @@
 			<element name="name" type="eppcom:labelType" />
 			<element name="deletionDate" type="dateTime" minOccurs="0" />
 			<element name="deactivationDate" type="dateTime" minOccurs="0" />
-		</sequence>
+			<element name="reason" type="string" minOccurs="0" />
+			<element name="type" type="string" minOccurs="0" />
+        </sequence>
 	</complexType>
 
 	<complexType name="authinfo1Type">
