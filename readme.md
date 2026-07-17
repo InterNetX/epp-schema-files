@@ -32,7 +32,7 @@ You can download the files and uses these within your epp client. If you want to
 		<dependency>
 			<groupId>org.domainrobot.epp</groupId>
 			<artifactId>epp-files</artifactId>
-			<version>1.0.3</version>
+			<version>1.0.7</version>
 		</dependency>
 		...
 	</dependencies>
