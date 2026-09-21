@@ -26,6 +26,14 @@
 
 	<element name="job" type="domainrobot:jobType"></element>
 
+	<element name="ocvalNotify" type="domainrobot:ocvalNotifyType"></element>
+
+	<element name="wdrpNotify" type="domainrobot:wdrpNotifyType"></element>
+
+	<element name="occonsentNotify" type="domainrobot:occonsentNotifyType"></element>
+
+	<element name="foa3Notify" type="domainrobot:foa3NotifyType"></element>
+
 	<element name="verification" type="domainrobot:verificationType"></element>
 
 	<element name="messages">
@@ -69,6 +77,55 @@
 			<element name="jobAction" type="string" minOccurs="0" />
 			<element name="jobObject" type="string" minOccurs="0" />
 		</sequence>
+	</complexType>
+
+	<complexType name="notifyContactType">
+		<sequence>
+			<element name="id" type="string" minOccurs="0" />
+			<element name="email" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<!-- Shared fields for all domainrobot:*Notify poll message extensions. Each concrete
+	     *NotifyType below extends this with only the fields specific to that notification. -->
+	<complexType name="notifyType">
+		<sequence>
+			<element name="domain" type="string" minOccurs="0" maxOccurs="unbounded" />
+			<element name="providerName" type="string" minOccurs="0" />
+			<element name="url" type="string" minOccurs="0" />
+			<element name="from" type="string" minOccurs="0" />
+			<element name="replyTo" type="string" minOccurs="0" />
+			<element name="contact" type="domainrobot:notifyContactType" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ocvalNotifyType">
+		<complexContent>
+			<extension base="domainrobot:notifyType" />
+		</complexContent>
+	</complexType>
+
+	<complexType name="wdrpNotifyType">
+		<complexContent>
+			<extension base="domainrobot:notifyType" />
+		</complexContent>
+	</complexType>
+
+	<complexType name="occonsentNotifyType">
+		<complexContent>
+			<extension base="domainrobot:notifyType" />
+		</complexContent>
+	</complexType>
+
+	<complexType name="foa3NotifyType">
+		<complexContent>
+			<extension base="domainrobot:notifyType">
+				<sequence>
+					<element name="transferStart" type="dateTime" minOccurs="0" />
+					<element name="gainingRegistrar" type="string" minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
 	</complexType>
 
 	<complexType name="miscType">
