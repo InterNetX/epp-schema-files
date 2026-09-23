@@ -200,8 +200,51 @@
 			<element name="addressQuality" type="string" minOccurs="0" />
 			<element name="ignoreAddressQuality" type="boolean" minOccurs="0" />
 			<element name="recheckAddressQuality" type="boolean" minOccurs="0" />
+			<!-- NIS2 handle claims — presence triggers write mode, empty list = delete all EMAIL claims -->
+			<element name="claims" type="domainrobot:claimsType" minOccurs="0" />
 		</sequence>
 	</complexType>
+
+	<!-- claimsType: list of claim items (empty = DELETE semantic for EMAIL claims) -->
+	<complexType name="claimsType">
+		<sequence>
+			<element name="claim" type="domainrobot:claimType"
+					 minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<!-- claimType: a single verification claim -->
+	<complexType name="claimType">
+		<sequence>
+			<element name="type"      type="domainrobot:verifyType" />
+			<element name="status"    type="domainrobot:claimStatusType" minOccurs="0" />
+			<element name="reference" type="string" minOccurs="0" />
+			<element name="timestamp" type="date"   minOccurs="0" />
+			<element name="evidence"  type="string" minOccurs="0" />
+			<element name="method"    type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="verifyType">
+		<restriction base="string">
+			<enumeration value="IDENTITY" />
+			<enumeration value="ADDRESS" />
+			<enumeration value="PHONE" />
+			<enumeration value="EMAIL" />
+			<enumeration value="ORGANIZATION" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="claimStatusType">
+		<restriction base="string">
+			<enumeration value="SUCCESS" />
+			<enumeration value="PENDING" />
+			<enumeration value="FAILED" />
+			<enumeration value="NOT_STARTED" />
+			<enumeration value="MANUAL_VERIFICATION" />
+			<enumeration value="NOT_SET" />
+		</restriction>
+	</simpleType>
 
 	<complexType name="birthType">
 		<sequence>
