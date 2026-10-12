@@ -34,6 +34,8 @@
 
 	<element name="foa3Notify" type="domainrobot:foa3NotifyType"></element>
 
+	<element name="caseVerificationNotify" type="domainrobot:caseVerificationNotifyType"></element>
+
 	<element name="verification" type="domainrobot:verificationType"></element>
 
 	<element name="messages">
@@ -99,10 +101,18 @@
 		</sequence>
 	</complexType>
 
+	<!-- Not derived from notifyType: its domain list carries per-domain deactivation/deletion
+	     info via verificationType, unlike the plain string domain list shared by the other
+	     *NotifyType extensions above. -->
 	<complexType name="ocvalNotifyType">
-		<complexContent>
-			<extension base="domainrobot:notifyType" />
-		</complexContent>
+		<sequence>
+			<element name="domain" type="domainrobot:verificationType" minOccurs="0" maxOccurs="unbounded" />
+			<element name="providerName" type="string" minOccurs="0" />
+			<element name="url" type="string" minOccurs="0" />
+			<element name="from" type="string" minOccurs="0" />
+			<element name="replyTo" type="string" minOccurs="0" />
+			<element name="contact" type="domainrobot:notifyContactType" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
 	</complexType>
 
 	<complexType name="wdrpNotifyType">
@@ -126,6 +136,20 @@
 				</sequence>
 			</extension>
 		</complexContent>
+	</complexType>
+
+	<!-- Not derived from notifyType: its domain list carries per-domain deactivation/deletion
+	     info via verificationType, unlike the plain string domain list shared by the other
+	     *NotifyType extensions above. -->
+	<complexType name="caseVerificationNotifyType">
+		<sequence>
+			<element name="domain" type="domainrobot:verificationType" minOccurs="0" maxOccurs="unbounded" />
+			<element name="providerName" type="string" minOccurs="0" />
+			<element name="url" type="string" minOccurs="0" />
+			<element name="from" type="string" minOccurs="0" />
+			<element name="replyTo" type="string" minOccurs="0" />
+			<element name="contact" type="domainrobot:notifyContactType" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
 	</complexType>
 
 	<complexType name="miscType">
