@@ -84,20 +84,29 @@
 	<complexType name="notifyContactType">
 		<sequence>
 			<element name="id" type="string" minOccurs="0" />
-			<element name="email" type="string" minOccurs="0" />
+			<element name="country" type="string" minOccurs="0" />
 		</sequence>
 	</complexType>
+
+	<!-- Fields shared by all domainrobot:*Notify poll message extensions, i.e. everything but
+	     the domain list (plain strings vs. verificationType) and the type-specific extras. -->
+	<group name="notifyEnvelopeGroup">
+		<sequence>
+			<element name="providerName" type="string" minOccurs="0" />
+			<element name="url" type="string" minOccurs="0" />
+			<element name="from" type="string" minOccurs="0" />
+			<element name="replyTo" type="string" minOccurs="0" />
+			<element name="to" type="string" minOccurs="0" />
+			<element name="contact" type="domainrobot:notifyContactType" minOccurs="0" />
+		</sequence>
+	</group>
 
 	<!-- Shared fields for all domainrobot:*Notify poll message extensions. Each concrete
 	     *NotifyType below extends this with only the fields specific to that notification. -->
 	<complexType name="notifyType">
 		<sequence>
 			<element name="domain" type="string" minOccurs="0" maxOccurs="unbounded" />
-			<element name="providerName" type="string" minOccurs="0" />
-			<element name="url" type="string" minOccurs="0" />
-			<element name="from" type="string" minOccurs="0" />
-			<element name="replyTo" type="string" minOccurs="0" />
-			<element name="contact" type="domainrobot:notifyContactType" minOccurs="0" maxOccurs="unbounded" />
+			<group ref="domainrobot:notifyEnvelopeGroup" />
 		</sequence>
 	</complexType>
 
@@ -107,18 +116,17 @@
 	<complexType name="ocvalNotifyType">
 		<sequence>
 			<element name="domain" type="domainrobot:verificationType" minOccurs="0" maxOccurs="unbounded" />
-			<element name="providerName" type="string" minOccurs="0" />
-			<element name="url" type="string" minOccurs="0" />
-			<element name="from" type="string" minOccurs="0" />
-			<element name="replyTo" type="string" minOccurs="0" />
-			<element name="contact" type="domainrobot:notifyContactType" minOccurs="0" maxOccurs="unbounded" />
+			<group ref="domainrobot:notifyEnvelopeGroup" />
 		</sequence>
 	</complexType>
 
+	<!-- Not derived from notifyType: the WDRP reminder goes to a single recipient address (to)
+	     instead of a contact list. -->
 	<complexType name="wdrpNotifyType">
-		<complexContent>
-			<extension base="domainrobot:notifyType" />
-		</complexContent>
+		<sequence>
+			<element name="domain" type="string" minOccurs="0" maxOccurs="unbounded" />
+			<group ref="domainrobot:notifyEnvelopeGroup" />
+		</sequence>
 	</complexType>
 
 	<complexType name="occonsentNotifyType">
@@ -144,11 +152,7 @@
 	<complexType name="caseVerificationNotifyType">
 		<sequence>
 			<element name="domain" type="domainrobot:verificationType" minOccurs="0" maxOccurs="unbounded" />
-			<element name="providerName" type="string" minOccurs="0" />
-			<element name="url" type="string" minOccurs="0" />
-			<element name="from" type="string" minOccurs="0" />
-			<element name="replyTo" type="string" minOccurs="0" />
-			<element name="contact" type="domainrobot:notifyContactType" minOccurs="0" maxOccurs="unbounded" />
+			<group ref="domainrobot:notifyEnvelopeGroup" />
 		</sequence>
 	</complexType>
 
